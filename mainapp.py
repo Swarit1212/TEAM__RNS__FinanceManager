@@ -5,7 +5,8 @@ from bill_reminder import add_bill, check_due_bills
 from debts_manager import add_debt, view_debts
 from net_worth import calculate_net_worth
 from reports import generate_spending_report
-
+from salary_manager import input_salary, view_salary
+from investment_manager import add_investment, add_return, view_investments
 def display_menu():
     print("\n===== Personal Finance Manager =====")
     print("1. Add Expense")
@@ -18,13 +19,18 @@ def display_menu():
     print("8. View Debts")
     print("9. Calculate Net Worth")
     print("10. Generate Spending Report")
-    print("11. Exit")
+    print("11. Input Salary")
+    print("12. View Salary")
+    print("13. Add Investment")
+    print("14. Add Return on Investment")
+    print("15. View Investments")
+    print("16. Exit")
     print("====================================")
 
 def main():
     while True:
         display_menu()
-        choice = input("Enter your choice (1-11): ")
+        choice = input("Enter your choice (1-16): ")
         
         try:
             if choice == '1':
@@ -77,15 +83,39 @@ def main():
             elif choice == '10':
                 # Generate Spending Report
                 generate_spending_report()
-            
+
             elif choice == '11':
-                # Exit
+            # Input Salary
+                input_salary()
+        
+            elif choice == '12':
+                # View Salary
+                view_salary()
+            
+            elif choice == '13':
+            # Add Investment
+                investment_name = input("Enter investment name: ")
+                amount = float(input("Enter investment amount: "))
+                date = input("Enter investment date (YYYY-MM-DD): ")
+                add_investment(investment_name, amount, date)
+
+            elif choice == '14':
+            # Add Return on Investment
+                investment_name = input("Enter investment name: ")
+                return_amount = float(input("Enter return amount: "))
+                add_return(investment_name, return_amount)
+        
+            elif choice == '15':
+            # View Investments
+                view_investments()
+        
+            elif choice == '16':
+            # Exit
                 print("Exiting... Goodbye!")
                 sys.exit()
-            
             else:
                 print("Invalid choice. Please try again.")
-        
+    
         except ValueError:
             print("Invalid input. Please enter numeric values where required.")
 
