@@ -37,8 +37,5 @@ Record and track investments (e.g., stocks, mutual funds, crypto) and monitor th
 Spending Report:
 Visualize your spending by category using bar plots, making it easier to understand where your money is going.
 
-Current Balance:
-Calculate your current balance by subtracting total expenses from your total salary, helping you track how much money you have left.
-
 
 
